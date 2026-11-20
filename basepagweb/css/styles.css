@@ -1,0 +1,252 @@
+/* Base compartida del sitio */
+:root {
+    --claro: #efeeee;
+    --oscuro: #111111;
+    --blanco: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    color: var(--oscuro);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Página de inicio */
+.inicio {
+    min-height: 100vh;
+    background: #000 url("../img/fondo.jpg") center / cover no-repeat fixed;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.logo,
+.marca {
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    letter-spacing: 4px;
+}
+
+.menu {
+    display: flex;
+    gap: 12px;
+}
+
+.menu a {
+    color: var(--blanco);
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 2px solid var(--blanco);
+    transition: 0.25s ease;
+}
+
+.menu a:hover,
+.menu a.activo {
+    background: var(--blanco);
+    color: #000;
+}
+
+.hero {
+    min-height: calc(100vh - 100px);
+    display: grid;
+    place-items: end start;
+    padding: 40px;
+}
+
+.hero p {
+    margin: 0;
+    color: var(--blanco);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Páginas internas */
+.pagina-obras,
+.pagina-contacto {
+    background: var(--claro);
+}
+
+.contenedor {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 60px 30px 100px;
+}
+
+.cabecera-interna {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.marca {
+    color: #000;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+.menu-claro a {
+    color: #000;
+    border: 0;
+    padding: 6px 0;
+    margin-left: 18px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid transparent;
+}
+
+.menu-claro a:hover,
+.menu-claro a.activo {
+    background: transparent;
+    color: #000;
+    border-bottom-color: #000;
+}
+
+.titulo-pagina,
+.contacto h1 {
+    margin: 0 0 70px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.galeria {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.obra-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #ddd;
+    transition: opacity 0.5s ease;
+}
+
+.obra-item img:hover {
+    opacity: 0.8;
+}
+
+.obra-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.footer-nav {
+    margin-top: 150px;
+}
+
+.footer-nav a {
+    color: #000;
+    text-decoration: none;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid transparent;
+}
+
+.footer-nav a:hover {
+    border-bottom-color: #000;
+}
+
+/* Contacto */
+.contacto {
+    min-height: 420px;
+}
+
+.contacto p {
+    max-width: 380px;
+    line-height: 1.7;
+}
+
+.correo {
+    display: inline-block;
+    color: #000;
+    margin-top: 12px;
+}
+
+.redes {
+    display: flex;
+    gap: 24px;
+    margin-top: 50px;
+}
+
+.redes a {
+    color: #000;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .logo {
+        max-width: 180px;
+        font-size: 1.35rem;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 8px;
+    }
+
+    .menu a {
+        font-size: 0.75rem;
+        padding: 6px 10px;
+    }
+
+    .hero {
+        padding: 20px;
+    }
+
+    .contenedor {
+        padding: 40px 20px 70px;
+    }
+
+    .cabecera-interna {
+        align-items: flex-start;
+        margin-bottom: 70px;
+    }
+
+    .menu-claro {
+        flex-direction: row;
+    }
+
+    .menu-claro a {
+        margin-left: 14px;
+        padding: 0 0 4px;
+    }
+
+    .galeria {
+        gap: 70px;
+    }
+}
